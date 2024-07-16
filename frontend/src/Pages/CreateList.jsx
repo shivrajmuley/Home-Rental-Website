@@ -176,8 +176,8 @@ const CreateList = (active) => {
         highlightDesc,
         price,
       })
-      .then((response) => alert("New Home Add")
-      .catch((error) => console.log(error));
+      .then((response) => alert("New Home Add"))
+      .catch((error) => console.log(error))
 
     // Error Handle
 
