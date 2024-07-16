@@ -48,23 +48,23 @@ const Properties = () => {
       <>
         <Nav />
 
-        <section className="mx-40 my-12 flex flex-col">
+        <section className="mx-40 my-12 flex flex-col  phones:m-0 phones:mx-3 phones:mt-4">
           <div className="flex justify-between">
-            <h1 className="font-semibold text-4xl">{properti.title}</h1>
+            <h1 className="font-semibold text-4xl phones:text-lg">{properti.title}</h1>
           </div>
 
           <div className="flex gap-2 flex-wrap my-4">
             {properti.amenities
               ? properti.listingPhotoPaths.map((img) => {
-                  return <img src={img} className="h-44 w-72 object-cover" />;
+                  return <img src={img} className="h-44 w-72 object-cover phones:h-20 phones:w-36" />;
                 })
               : " "}
           </div>
-          <p className="font-medium text-xl py-2">
+          <p className="font-medium text-xl py-2 phones:text-sm">
             {properti.type} in {properti.city}, {properti.country}
           </p>
 
-          <span className="text-sm font-normal  ">
+          <span className="text-sm font-normal  phones:text-xs">
             {properti.guestCount} guests - {properti.bedroomCount} bedroom -{" "}
             {properti.bedCount} bed - {properti.bathroomCount} bathroom
           </span>
@@ -74,27 +74,27 @@ const Properties = () => {
               src={properti.creator[0].image}
               className="h-16 w-16 object-cover"
             />
-            <p className="font-medium text-xl">
+            <p className="font-medium text-xl phones:text-xs">
               Hosted by {properti.creator[0].Name}
             </p>
           </div>
 
           <div className=" border-stone-400 pb-5 border-b-[2px]">
-            <p className="font-medium text-xl">Description</p>
+            <p className="font-medium text-xl phones:text-sm">Description</p>
 
-            <span className="text-sm font-normal w-8/12 py-3 font-light ">
+            <span className="text-sm font-normal w-8/12 py-3 font-light phones:text-xs">
               {properti.description}
             </span>
           </div>
           <div className=" border-stone-400 pb-5 border-b-[2px]">
             <p className="font-medium text-xl mt-6">{properti.highlight}</p>
-            <span className="text-sm font-normal w-8/12 py-3 font-light  ">
+            <span className="text-sm font-normal w-8/12 py-3 font-light  phones:text-xs">
               {properti.highlightDesc}
             </span>
           </div>
-          <div className="flex  justify-between">
+          <div className="flex  justify-between phones:flex-col">
             <div>
-              <p className="font-medium text-3xl mt-6 mb-6">
+              <p className="font-medium text-3xl mt-6 mb-6 phones:text-lg">
                 What this place offers?
               </p>
               <div className="flex flex-wrap gap-7 items-center text-center">
@@ -117,7 +117,7 @@ const Properties = () => {
               </div>
             </div>
             <div className="flex flex-col">
-              <p className="font-medium text-2xl mt-6 mb-6 text-nowrap">
+              <p className="font-medium text-2xl mt-6 mb-6 text-nowrap phones:text-lg">
                 How long do you want to stay?
               </p>
               <DateRange
@@ -126,18 +126,18 @@ const Properties = () => {
                 moveRangeOnFirstSelection={false}
                 ranges={state}
               />
-              <p className="font-semibold text-3xl">
+              <p className="font-semibold text-3xl phones:text-lg">
                 ${properti.price} x {countDays} night
               </p>
-              <p className="font-semibold text-3xl">
+              <p className="font-semibold text-3xl phones:text-lg">
                 Total price : ${properti.price * countDays}
               </p>
 
-              <span className="font-normal my-3 text-sm">
+              <span className="font-normal my-3 text-sm phones:text-xs">
                 Start Date : {state[0].startDate.toDateString()}
               </span>
 
-              <span className="font-normal text-sm">
+              <span className="font-normal text-sm phones:text-xs">
                 End Date : {state[0].endDate.toDateString()}
               </span>
 
