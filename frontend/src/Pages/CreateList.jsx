@@ -146,7 +146,7 @@ const CreateList = (active) => {
   console.log(creator);
 
   //fetching data
-  function createListHandle (e) {
+  const createListHandle = (e) => {
     e.preventDefault();
     console.log(imgFile);
 
