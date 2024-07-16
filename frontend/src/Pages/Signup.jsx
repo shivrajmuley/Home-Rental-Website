@@ -5,6 +5,8 @@ import { TiUpload } from "react-icons/ti";
 import { useDispatch, useSelector } from "react-redux";
 import { MdErrorOutline } from "react-icons/md";
 import { Email } from "../redux/slice/fetchEmail";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Signup = () => {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
@@ -56,8 +58,11 @@ const Signup = () => {
         })
         .then((success) => {
           console.log(success);
-          alert("Sign Up Successfully");
-          navigate("/login");
+           toast.success("Login Successfully")
+        
+           setTimeout(() => {
+         navigate("/login");
+        }, 1000);
         })
         .catch((error) => {
           console.log(error);
@@ -207,6 +212,7 @@ const Signup = () => {
           type="file"
           onChange={handleFileChange}
         />
+           <ToastContainer autoClose={1000} bodyClassName="bg-white text-xl" />
       </div>
     </div>
   );
