@@ -15,7 +15,7 @@ import { fetchBook } from "../redux/slice/bookingSlice";
 
 import { fetchProperty } from "../redux/slice/fetchProperties";
 
-const Properties = () => {
+const Properties = (active) => {
   const dispatch = useDispatch();
   const [startDa, setStartDa] = useState();
 
