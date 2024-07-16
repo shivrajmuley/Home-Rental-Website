@@ -16,7 +16,7 @@ const PropertyList = (active) => {
   const navigate = useNavigate();
 
   axios
-    .get(`http://localhost:8800/propertylist/${email}`)
+    .get(`https://home-rental-backend-knmc.onrender.com/propertylist/${email}`)
     .then((result) => setData(result.data));
 
   console.log(data);
