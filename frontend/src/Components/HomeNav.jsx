@@ -27,7 +27,7 @@ const Nav = () => {
           setSearchResult([]);
           return;
         }
-        const res = await axios.get("http://localhost:8800/properties", {
+        const res = await axios.get("https://home-rental-backend-knmc.onrender.com/properties", {
           params: { key: key, limit: 3 },
         });
         setSearchResult(res.data);
@@ -51,7 +51,7 @@ const Nav = () => {
   if (localStorage.length > 1) {
     useEffect(() => {
       axios
-        .get("http://localhost:8800/findEmail/" + emm)
+        .get("https://home-rental-backend-knmc.onrender.com/findEmail/" + emm)
         .then((response) => setProImg(response.data.image));
       console.log("yes");
     }, []);
