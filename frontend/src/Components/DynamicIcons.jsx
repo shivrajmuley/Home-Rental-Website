@@ -53,7 +53,7 @@ const DynamicIcons = () => {
   const params = useParams();
   useEffect(() => {
     axios
-      .get(`http://localhost:8800/properties/${params.id}`)
+      .get(`https://home-rental-backend-knmc.onrender.com/properties/${params.id}`)
       .then((response) => setIcons(response.data))
       .catch((err) => console.log(err));
   }, []);
