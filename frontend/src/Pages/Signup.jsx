@@ -8,7 +8,7 @@ import { Email } from "../redux/slice/fetchEmail";
 const Signup = () => {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
-  const [imageURL, setImageURL] = useState();
+  const [imageURL, setImageURL] = useState("");
   const [cnfPassword, setCnfPassword] = useState();
   const [password, setPassword] = useState();
   const [proEmail, setEmail] = useState("");
