@@ -40,7 +40,7 @@ const dispatch = useDispatch()
         <Link to="/" className="flex items-center gap-3  phones:px-0">
           <img
             className="h-14 phones:h-8"
-            src="http://localhost:8800/uploads/profile_1720951341682.jpg"
+            src="https://home-rental-backend-knmc.onrender.com/uploads/profile_1720951341682.jpg"
           />
           <h1 className="font-bold text-xl phones:text-xs">Hub Havens</h1>
         </Link>
