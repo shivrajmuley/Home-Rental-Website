@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const Email = createAsyncThunk("email", async ({ email }) => {
-  const response = await axios.get(`http://localhost:8800/findEmail/${email}`);
+  const response = await axios.get(`https://home-rental-backend-knmc.onrender.com/findEmail/${email}`);
   return response.data;
 });
 const fetchEmail = createSlice({
