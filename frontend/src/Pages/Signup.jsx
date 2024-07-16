@@ -29,15 +29,17 @@ const Signup = () => {
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
   };
-
-  const handleSignup = (e) => {
-    e.preventDefault();
-    const formData = new FormData();
+  useEffect(() => {
+    let formData = new FormData();
     formData.append("profile", file);
     axios
-      .post("https://home-rental-backend-knmc.onrender.com/uploadProfile", formData)
+      .post("http://localhost:8800/uploadProfile", formData)
       .then((res) => setImageURL(res.data.image_url))
       .catch((err) => console.log(err));
+  }, [file]);
+  const handleSignup = (e) => {
+    e.preventDefault();
+
 
     dispatch(Email({ email }));
     setFormErr(true);
