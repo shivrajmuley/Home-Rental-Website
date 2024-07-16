@@ -4,7 +4,7 @@ import axios from "axios";
 export const fetchBook = createAsyncThunk(
   "fetchBook",
   async ({ startDate, endDate, totalPrice, customerId, listingId }) => {
-    const response = await axios.post("http://localhost:8800/booking", {
+    const response = await axios.post("https://home-rental-backend-knmc.onrender.com/booking", {
       startDate,
       endDate,
       totalPrice,
