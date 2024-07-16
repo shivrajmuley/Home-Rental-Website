@@ -146,7 +146,7 @@ const CreateList = (active) => {
   console.log(creator);
 
   //fetching data
-  const createListHandle = (e) => {
+  function createListHandle (e) {
     e.preventDefault();
     console.log(imgFile);
 
@@ -627,7 +627,7 @@ const CreateList = (active) => {
 
   
   <button
-        onClick={ () => email != null ? createListHandle() :  toast.error("Please Login First ")}
+        onClick={ () => email != null ? createListHandle :  toast.error("Please Login First ")}
         className="bg-green-600 text-white text-xl font-semibold px-12 rounded-md py-4 ml-16 mt-8 mb-28 tracking-wider hover:bg-green-950 phones:text-base phones:ml-8"
       >
         Create your listing
