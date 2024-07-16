@@ -13,7 +13,7 @@ export const propertiesList = createAsyncThunk(
     let promise = [];
     response.data.wishlist.map((node) => {
       promise.push(
-        axios.get(`http://localhost:8800/properties/${node}`).then((result) => {
+        axios.get(`https://home-rental-backend-knmc.onrender.com/properties/${node}`).then((result) => {
           return result.data;
         })
       );
