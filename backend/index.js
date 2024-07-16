@@ -44,13 +44,13 @@ app.use("/uploads", express.static(`uploads`));
 app.post("/uploadProfile", uploadProfile.single("profile"), (req, res) => {
   res.json({
     success: 1,
-    image_url: `http://localhost:8800/uploads/${req.file.filename}`,
+    image_url: `https://home-rental-backend-knmc.onrender.com/uploads/${req.file.filename}`,
   });
 });
 app.post("/upload", upload, (req, res) => {
   let trail = [];
   for (let i = 0; i < req.files.length; i++) {
-    trail.push(`http://localhost:8800/uploads/${req.files[i].filename}`);
+    trail.push(`https://home-rental-backend-knmc.onrender.com/uploads/${req.files[i].filename}`);
   }
   res.json({
     image_url: trail,
