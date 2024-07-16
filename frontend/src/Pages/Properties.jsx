@@ -159,7 +159,7 @@ const Properties = (active) => {
                   );
                   {email != null ?      
                     properti.price * countDays != 0
-                      ?    toast.success("Successfully Booked") & location.reload()
+                      ?    toast.success("Successfully Booked")
                       :    toast.error("Please select the Date ")
                    : toast.error("Please Login First")}
                 }}
