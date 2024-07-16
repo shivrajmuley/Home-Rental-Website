@@ -133,7 +133,7 @@ const CreateList = (active) => {
     }
 
     axios
-      .post("http://localhost:8800/upload", formData)
+      .post("https://home-rental-backend-knmc.onrender.com/upload", formData)
       .then((res) => setImageURL(res.data.image_url))
       .catch((err) => console.log(err));
   };
@@ -154,7 +154,7 @@ const CreateList = (active) => {
     console.log(listingPhotoPaths);
 
     axios
-      .post("http://localhost:8800/homeListing", {
+      .post("https://home-rental-backend-knmc.onrender.com/homeListing", {
         creator,
         category,
         type,
