@@ -160,7 +160,7 @@ const Properties = (active) => {
                   {email != null ?      
                     properti.price * countDays != 0
                       ?    toast.success("Successfully Booked") & location.reload()
-                      :    toast.error("Please select the Date ");
+                      :    toast.error("Please select the Date ")
                    : toast.error("Please Login First")}
                 }}
                 className="bg-green-600 text-white text-lg font-semibold px-28 rounded-md py-3  my-8 tracking-wider hover:bg-green-950 "
