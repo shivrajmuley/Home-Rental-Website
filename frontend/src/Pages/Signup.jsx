@@ -11,8 +11,8 @@ const Signup = () => {
   const [imageURL, setImageURL] = useState();
   const [cnfPassword, setCnfPassword] = useState();
   const [password, setPassword] = useState();
-  const [email, setEmail] = useState("");
-  email.toLowerCase();
+  const [proEmail, setEmail] = useState("");
+   let email = proEmail.toLowerCase();
   const [file, setFile] = useState(false);
   const [err, setErr] = useState(null);
   const navigate = useNavigate();
