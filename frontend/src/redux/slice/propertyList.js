@@ -7,7 +7,7 @@ export const propertiesList = createAsyncThunk(
   "propertylist",
   async ({ email }) => {
     const response = await axios.get(
-      `http://localhost:8800/findEmail/${email}`
+      `https://home-rental-backend-knmc.onrender.com/findEmail/${email}`
     );
 
     let promise = [];
