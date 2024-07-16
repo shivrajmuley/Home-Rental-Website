@@ -21,7 +21,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/wishlist" element={<WishList active={active}/>} />
         <Route path="/create-list" element={<CreateList active={active}/>} />
-        <Route path="/properties/:id" element={<Properties />} />
+        <Route path="/properties/:id" element={<Properties active={active}/>} />
 
         <Route path="/propertylist" element={<PropertyList active={active}/>} />
         <Route path="/triplist" element={<TripList active={active}/>} />
