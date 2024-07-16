@@ -6,7 +6,8 @@ import { FaPlusCircle, FaMinusCircle, FaDollarSign } from "react-icons/fa";
 import { MdAddPhotoAlternate, MdErrorOutline } from "react-icons/md";
 import axios from "axios";
 import { Email } from "../redux/slice/fetchEmail";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useDispatch, useSelector } from "react-redux";
 const CreateList = (active) => {
 
@@ -133,7 +134,7 @@ const CreateList = (active) => {
     }
 
     axios
-      .post("https://home-rental-frontend-poex.onrender.com/upload", formData)
+      .post("https://home-rental-backend-knmc.onrender.com/upload", formData)
       .then((res) => setImageURL(res.data.image_url))
       .catch((err) => console.log(err));
   };
@@ -154,7 +155,7 @@ const CreateList = (active) => {
     console.log(listingPhotoPaths);
 
     axios
-      .post("https://home-rental-frontend-poex.onrender.com/homeListing", {
+      .post("https://home-rental-backend-knmc.onrender.com/homeListing", {
         creator,
         category,
         type,
@@ -176,8 +177,11 @@ const CreateList = (active) => {
         highlightDesc,
         price,
       })
-      .then((response) => console.log(response.data))
-      .catch((error) => console.log(error));
+      .then((response) =>   {
+        toast.success("New Home Created")
+
+      })
+      .catch((error) =>  toast.error("Something went wrong "))
 
     // Error Handle
 
@@ -496,7 +500,7 @@ const CreateList = (active) => {
           </div>
 
           <p className="font-medium mt-12 phones:text-sm phones:mt-3">
-            What make your place attractive and excisting?
+            What make your place attractive.active and excisting?
           </p>
           <div className="flex flex-col my-2 phones:text-xs">
             <label className="my-2">Title</label>
@@ -618,9 +622,9 @@ const CreateList = (active) => {
         </div>
       </div>
 
- 
+  
   <button
-        onClick={createListHandle}
+        onClick={email != null ? createListHandle : toast.error("Please Login First ") }
         className="bg-green-600 text-white text-xl font-semibold px-12 rounded-md py-4 ml-16 mt-8 mb-28 tracking-wider hover:bg-green-950 phones:text-base phones:ml-8"
       >
         Create your listing
@@ -639,7 +643,7 @@ const CreateList = (active) => {
         onChange={handleImgPreview}
         className="bg-black opacity-0 sPhone:hidden relative top-[-820px] w-24 h-20 left-[-56px] "
       />
- 
+   <ToastContainer autoClose={1000} bodyClassName="bg-white text-xl" />
       <Footer />
     </div>
   );
