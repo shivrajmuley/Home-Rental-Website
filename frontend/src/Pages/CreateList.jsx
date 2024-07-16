@@ -179,9 +179,7 @@ const CreateList = (active) => {
       })
       .then((response) =>   {
         toast.success("New Home Created")
-      setTimeout(() => {
-  window.location.reload()
-}, 1000);
+
       })
       .catch((error) =>  toast.error("Something went wrong "))
 
