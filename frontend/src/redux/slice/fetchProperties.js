@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchProperty = createAsyncThunk("properties", async ({ id }) => {
-  const response = await axios.get(`http://localhost:8800/properties/${id}`);
+  const response = await axios.get(`https://home-rental-backend-knmc.onrender.com/properties/${id}`);
   return response.data;
 });
 const fetchProperties = createSlice({
