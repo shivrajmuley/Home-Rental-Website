@@ -45,7 +45,10 @@ const Properties = () => {
     return null;
   } else {
     return (
-      <>
+       <div style={{
+        color: active.active === true ? "black" : "white",
+        background: active.active === true ? "white" : "rgb(45, 45, 45)",
+      }}>
         <Nav />
 
         <section className="mx-40 my-12 flex flex-col  phones:m-0 phones:mx-3 phones:mt-4">
@@ -167,7 +170,7 @@ const Properties = () => {
         </section>
 
         <Footer />
-      </>
+      </div>
     );
   }
 };
