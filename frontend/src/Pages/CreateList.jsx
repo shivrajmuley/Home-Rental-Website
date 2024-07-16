@@ -6,7 +6,8 @@ import { FaPlusCircle, FaMinusCircle, FaDollarSign } from "react-icons/fa";
 import { MdAddPhotoAlternate, MdErrorOutline } from "react-icons/md";
 import axios from "axios";
 import { Email } from "../redux/slice/fetchEmail";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useDispatch, useSelector } from "react-redux";
 const CreateList = (active) => {
 
@@ -176,8 +177,14 @@ const CreateList = (active) => {
         highlightDesc,
         price,
       })
-      .then((response) => alert("New Home Add"))
-      .catch((error) => console.log(error))
+      .then((response) =>   {
+        toast.success("New Home Created")
+          setTimeout(() => {
+       
+          window.location.reload();
+        }, 1000);
+      })
+      .catch((error) =>  toast.error("Something went wrong "))
 
     // Error Handle
 
@@ -639,7 +646,7 @@ const CreateList = (active) => {
         onChange={handleImgPreview}
         className="bg-black opacity-0 sPhone:hidden relative top-[-820px] w-24 h-20 left-[-56px] "
       />
- 
+   <ToastContainer autoClose={1000} bodyClassName="bg-white text-xl" />
       <Footer />
     </div>
   );
