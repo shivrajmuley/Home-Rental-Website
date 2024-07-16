@@ -3,6 +3,8 @@ import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 import { FaRegHeart } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { DateRange } from "react-date-range";
 
@@ -157,14 +159,15 @@ const Properties = (active) => {
                   );
                   {
                     properti.price * countDays != 0
-                      ? alert("Successfully Booked") & location.reload()
-                      : "";
+                      ?    toast.success("Successfully Booked") & location.reload()
+                      :    toast.error("Please select the Date ");
                   }
                 }}
                 className="bg-green-600 text-white text-lg font-semibold px-28 rounded-md py-3  my-8 tracking-wider hover:bg-green-950 "
               >
                 BOOKING
               </button>
+                <ToastContainer autoClose={1000} bodyClassName="bg-white text-xl" />
             </div>
           </div>
         </section>
