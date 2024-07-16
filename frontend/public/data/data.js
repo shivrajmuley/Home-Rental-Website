@@ -6,6 +6,7 @@ import {
 } from "react-icons/gi";
 import { TfiMoney } from "react-icons/tfi";
 import { BiSolidCastle } from "react-icons/bi";
+import { TbToolsKitchen } from "react-icons/tb";
 import {
   PiWindmillDuotone,
   PiMountainsFill,
@@ -233,7 +234,7 @@ export const facilities = [
   },
   {
     name: "Cooking set",
-    Icon: FaKitchenSet,
+    Icon: TbToolsKitchen,
   },
   {
     name: "Refrigerator",

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, Navigate, NavLink, Route, useNavigate } from "react-router-dom";
 import Nav from "../Components/Nav";
 
 const Login = () => {
-  const [email, setEmail] = useState();
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState();
   const [err, setErr] = useState(null);
   const navigate = useNavigate();
-
+  email.toLowerCase()
 let proEmail;
   const loginHandle = (e) => {
     e.preventDefault();
@@ -31,11 +31,11 @@ let proEmail;
 
     <div className="flex justify-center  items-center bg-loginBanner h-screen bg-cover bg-bottom  bg-no-repeat">
      
-      <div className="flex rounded-lg  flex-col bg-black bg-opacity-75  w-[500px] ml-[700px] px-10 text-white items-center py-8">
+      <div className="flex rounded-lg  flex-col bg-black bg-opacity-75  w-[500px] ml-[700px] px-10 text-white items-center py-8 phones:mx-4 ">
         <h2 className="text-white font-bold tracking-wider mb-4">LOGIN</h2>
 
         <input
-          className="outline-none  w-full px-2 py-1 bg-transparent border-white my-2 border-[1px] rounded-sm"
+          className="outline-none  w-full px-2 py-1 bg-transparent border-white my-2 border-[1px] lowercase rounded-sm"
           type="text"
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
@@ -43,7 +43,7 @@ let proEmail;
 
         <input
           className="outline-none  w-full px-2 py-1 bg-transparent border-white my-2 border-[1px] rounded-sm"
-          type="text"
+          type="password"
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
         />
@@ -55,7 +55,7 @@ let proEmail;
           LOGIN
         </button>
         <span className="text-xs  font-light tracking-widest">
-          Don't have an account? Sigup in Here
+          Don't have an account? <Link to="/signup" >Sigup in Here</Link>
         </span>
         <span className="mt-6">DEMO Account</span>
 

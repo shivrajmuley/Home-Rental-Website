@@ -9,7 +9,6 @@ import * as FaReactIcons from "react-icons/fa";
 import * as MdReactIcons from "react-icons/md";
 import * as BsReactIcons from "react-icons/bs";
 import * as TbReactIcons from "react-icons/tb";
-import * as Fa6ReactIcons from "react-icons/fa6";
 
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -46,9 +45,8 @@ const DynamicIcons = () => {
     if (iconName.startsWith("Gi")) {
       return GiReactIcons[iconName];
     }
-    if (iconName.startsWith("Fa")) {
-      return FaReactIcons[iconName];
-    }
+ 
+
   };
 
   let [icons, setIcons] = useState([]);
@@ -59,7 +57,7 @@ const DynamicIcons = () => {
       .then((response) => setIcons(response.data))
       .catch((err) => console.log(err));
   }, []);
-  console.log(icons);
+
   return (
     <div>
    

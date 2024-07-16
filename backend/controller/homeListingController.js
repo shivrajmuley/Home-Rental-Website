@@ -2,6 +2,7 @@ const HomeListing = require("../models/HomeListing");
 
 const listing = async (req, res) => {
   const {
+    creator,
     category,
     type,
     streetAddress,
@@ -24,6 +25,7 @@ const listing = async (req, res) => {
   } = req.body;
   try {
     const result = await HomeListing.create({
+      creator:creator,
       category: category,
       type: type,
       streetAddress: streetAddress,

@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 
-const HomeListing = mongoose.Schema(
+let HomeListing = mongoose.Schema(
   {
+    
+    creator: [],
     category: {
       type: String,
       required: false,
@@ -12,7 +14,7 @@ const HomeListing = mongoose.Schema(
     },
     streetAddress: {
       type: String,
-      required: false,
+      required: true,
     },
     aptSuite: {
       type: String,
@@ -20,7 +22,7 @@ const HomeListing = mongoose.Schema(
     },
     city: {
       type: String,
-      required: false,
+      required: true,
     },
     province: {
       type: String,
@@ -28,23 +30,23 @@ const HomeListing = mongoose.Schema(
     },
     country: {
       type: String,
-      required: false,
+      required: true,
     },
     guestCount: {
       type: Number,
-      required: false,
+      required: true,
     },
     bedroomCount: {
       type: Number,
-      required: false,
+      required: true,
     },
     bedCount: {
       type: Number,
-      required: false,
+      required: true,
     },
     bathroomCount: {
       type: Number,
-      required: false,
+      required: true,
     },
     amenities: {
       type: Array,
@@ -57,23 +59,23 @@ const HomeListing = mongoose.Schema(
     listingPhotoPaths: [{ type: String }], // Store photo URLs
     title: {
       type: String,
-      required: false,
+      required: true,
     },
     description: {
       type: String,
-      required: false,
+      required: true,
     },
     highlight: {
       type: String,
-      required: false,
+      required: true,
     },
     highlightDesc: {
       type: String,
-      required: false,
+      required: true,
     },
     price: {
       type: Number,
-      required: false,
+      required: true,
     },
   },
 

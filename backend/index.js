@@ -4,6 +4,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const { signup, login } = require("./controller/userController");
 const listing = require("./controller/homeListingController");
+const booking = require("./controller/bookingController");
 
 const multer = require("multer");
 const storage = multer.diskStorage({
@@ -21,6 +22,8 @@ const path = require("path");
 const User = require("./models/User");
 const { compare } = require("bcrypt");
 const HomeListing = require("./models/HomeListing");
+const { create } = require("domain");
+const Booking = require("./models/Booking");
 
 //middleware
 app.use(express.json());
@@ -31,14 +34,14 @@ mongoose
   .connect(process.env.MONGO_URL)
   .then((result) => {
     console.log("Connected To Database");
-    app.listen(8800, () => {
+    app.listen(process.env.PORT || 8800, () => {
       console.log("Server is Running");
     });
   })
   .catch((err) => console.log("Can't Connected to Database ERROR!"));
 
 app.use("/uploads", express.static(`uploads`));
-app.post("/uploadProfile", uploadProfile.single("file"), (req, res) => {
+app.post("/uploadProfile", uploadProfile.single("profile"), (req, res) => {
   res.json({
     success: 1,
     image_url: `http://localhost:8800/uploads/${req.file.filename}`,
@@ -63,6 +66,9 @@ app.post("/login", login);
 //HomeListing
 app.post("/homeListing", listing);
 
+//Booking
+app.post("/booking", booking);
+
 // get all data properties
 app.get("/properties/:id", async (req, res) => {
   try {
@@ -84,6 +90,47 @@ app.get("/findEmail/:email", async (req, res) => {
   try {
     const getProperties = await User.findOne(req.params);
     res.status(200).json(getProperties);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+//WIshList
+app.post("/updateUser/:email", async (req, res) => {
+  try {
+    const getProperties = await User.findOneAndUpdate(req.params, {
+      $set: { wishlist: req.body.wishlist },
+    });
+    res.status(200).json(getProperties);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+app.get("/properties/:productId", async (req, res) => {
+  try {
+    const getProperties = await HomeListing.find(req.params);
+    res.status(200).json(getProperties);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+//Booking
+app.get("/booking/:email", async (req, res) => {
+  try {
+    const getBooking = await Booking.find({ customerId: req.params.email });
+    res.status(200).json(getBooking);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+//property list
+app.get("/propertylist/:email", async (req, res) => {
+  try {
+    const getBooking = await HomeListing.find({ 'creator.email':  req.params.email });
+    res.status(200).json(getBooking);
   } catch (error) {
     res.status(500).json(error);
   }
