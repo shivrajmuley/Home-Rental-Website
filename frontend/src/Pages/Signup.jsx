@@ -33,7 +33,7 @@ const Signup = () => {
     let formData = new FormData();
     formData.append("profile", file);
     axios
-      .post("http://localhost:8800/uploadProfile", formData)
+      .post("https://home-rental-backend-knmc.onrender.com/uploadProfile", formData)
       .then((res) => setImageURL(res.data.image_url))
       .catch((err) => console.log(err));
   }, [file]);
