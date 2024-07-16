@@ -30,7 +30,7 @@ const AllHome = () => {
   console.log(emm);
   useEffect(() => {
     axios
-      .get("http://localhost:8800/properties")
+      .get("https://home-rental-backend-knmc.onrender.com/properties")
       .then((response) => {
         setItems(response.data);
         setProperties(response.data);
@@ -57,7 +57,7 @@ const AllHome = () => {
 
     if (localStorage.length > 1) {
       axios
-        .post("http://localhost:8800/updateUser/" + emm, {
+        .post("https://home-rental-backend-knmc.onrender.com/updateUser/" + emm, {
           wishlist: removeDuplicates(productId),
         })
         .then((response) => console.log(response.data))
@@ -67,7 +67,7 @@ const AllHome = () => {
 
   if (localStorage.length > 1) {
     useEffect(() => {
-      axios.get("http://localhost:8800/findEmail/" + emm).then((response) => {
+      axios.get("https://home-rental-backend-knmc.onrender.com/findEmail/" + emm).then((response) => {
         setWishlistColor(response.data.wishlist);
         setProductId(response.data.wishlist);
       });
