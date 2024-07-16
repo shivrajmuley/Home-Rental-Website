@@ -13,7 +13,7 @@ let proEmail;
   const loginHandle = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8800/login", { email, password })
+      .post("https://home-rental-backend-knmc.onrender.com/login", { email, password })
       .then((success) => {
    
         alert("Login Successfully");
