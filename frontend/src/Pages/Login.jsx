@@ -4,12 +4,12 @@ import { Link, Navigate, NavLink, Route, useNavigate } from "react-router-dom";
 import Nav from "../Components/Nav";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
+  const [proEmail, setEmail] = useState("");
   const [password, setPassword] = useState();
   const [err, setErr] = useState(null);
   const navigate = useNavigate();
-  email.toLowerCase()
-let proEmail;
+  let email = proEmail.toLowerCase();
+
   const loginHandle = (e) => {
     e.preventDefault();
     axios
