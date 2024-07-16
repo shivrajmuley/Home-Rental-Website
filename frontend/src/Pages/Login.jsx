@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link, Navigate, NavLink, Route, useNavigate } from "react-router-dom";
 import Nav from "../Components/Nav";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [proEmail, setEmail] = useState("");
@@ -16,14 +18,19 @@ const Login = () => {
       .post("https://home-rental-backend-knmc.onrender.com/login", { email, password })
       .then((success) => {
    
-        alert("Login Successfully");
+    toast.success("Login Successfully")
         localStorage.setItem("auth-token", success.data.token);
         localStorage.setItem("profile",email)
-        navigate("/")
-        window.location.replace("/");
+  setTimeout(() => {
+          navigate("/");
+          window.location.replace("/");
+        }, 1000);
       
       })
-      .catch((error) => setErr(error.response.data.message));
+      .catch((error) =>{
+         toast.error("Invalid Credentials ")
+        setErr(error.response.data.message));
+  }
   };
 
   return (
@@ -62,6 +69,8 @@ const Login = () => {
         <div className="flex flex-col mt-1 text-sm text-center font-light">
           <span> Email - abc@gmail.com</span>
           <span> Password - abc@123</span>
+                      <ToastContainer autoClose={1000} bodyClassName="bg-white text-xl" />
+
         </div>
       </div>
     </div>
