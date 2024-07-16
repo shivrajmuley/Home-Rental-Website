@@ -15,7 +15,7 @@ const TripList = (active) => {
   const email = localStorage.getItem("profile");
   useEffect(() => {
     axios
-      .get("http://localhost:8800/booking/" + email)
+      .get("https://home-rental-backend-knmc.onrender.com/booking/" + email)
       .then((response) => setBookData(response.data));
   }, []);
 console.log(active.active)
