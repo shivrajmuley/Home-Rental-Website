@@ -5,7 +5,8 @@ import { FaRegHeart } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 
 import { DateRange } from "react-date-range";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 
@@ -160,7 +161,7 @@ const Properties = (active) => {
                   );
                   {
                     properti.price * countDays != 0
-                      ? alert("Successfully Booked") & location.reload()
+                      ? toast.success("Successfully Booked") 
                       : "";
                   }
                 }}
@@ -168,6 +169,7 @@ const Properties = (active) => {
               >
                 BOOKING
               </button>
+                   <ToastContainer autoClose={1000} bodyClassName="bg-white text-xl" />
             </div>
           </div>
         </section>
