@@ -14,7 +14,7 @@ const listing = async (req, res) => {
     bedCount,
     bathroomCount,
     bedroomCount,
-    amenities,
+  
     amenitiesIcon,
     title,
     listingPhotoPaths,
@@ -37,7 +37,7 @@ const listing = async (req, res) => {
       bedCount: bedCount,
       bathroomCount: bathroomCount,
       bedroomCount: bedroomCount,
-      amenities: amenities,
+   
       amenitiesIcon:amenitiesIcon,
       title: title,
       listingPhotoPaths: listingPhotoPaths,
