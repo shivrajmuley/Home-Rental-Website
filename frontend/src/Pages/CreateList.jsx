@@ -145,6 +145,7 @@ const CreateList = (active) => {
   console.log(creator);
 
   //fetching data
+if(email != null){
   const createListHandle = (e) => {
     e.preventDefault();
     console.log(imgFile);
@@ -188,7 +189,10 @@ const CreateList = (active) => {
     console.log(streetAddress.message);
     console.log(streetAddress);
   };
-
+else{
+   toast.error("Please login first  "));
+}
+}
   return (
     <div
       style={{
