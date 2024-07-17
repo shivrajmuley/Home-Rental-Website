@@ -181,17 +181,17 @@ if(email != null){
         toast.success("New Home Created");
       })
       .catch((error) => toast.error("Something went wrong "));
-
+  }
+else{
+   toast.error("Please login first  ")
+}
     // Error Handle
 
     setFormErr(true);
 
     console.log(streetAddress.message);
     console.log(streetAddress);
-  }
-else{
-   toast.error("Please login first  ")
-}
+
 }
   return (
     <div
