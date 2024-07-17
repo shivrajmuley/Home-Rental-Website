@@ -56,11 +56,11 @@ const Properties = (active) => {
           </div>
 
           <div className="flex gap-2 flex-wrap my-4">
-            {properti.amenities
-              ? properti.listingPhotoPaths.map((img) => {
+            {
+               properti.listingPhotoPaths.map((img) => {
                   return <img src={img} className="h-44 w-72 object-cover phones:h-20 phones:w-36" />;
                 })
-              : " "}
+              }
           </div>
           <p className="font-medium text-xl py-2 phones:text-sm">
             {properti.type} in {properti.city}, {properti.country}
