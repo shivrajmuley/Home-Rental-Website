@@ -188,7 +188,7 @@ if(email != null){
 
     console.log(streetAddress.message);
     console.log(streetAddress);
-  };
+  }
 else{
    toast.error("Please login first  ")
 }
