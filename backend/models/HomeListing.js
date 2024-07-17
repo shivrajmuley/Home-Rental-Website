@@ -48,10 +48,7 @@ let HomeListing = mongoose.Schema(
       type: Number,
       required: true,
     },
-    amenities: {
-      type: Array,
-      default: [],
-    },
+
     amenitiesIcon: {
       type: Array,
       default: [],
