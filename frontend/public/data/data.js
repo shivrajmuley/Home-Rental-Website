@@ -174,7 +174,7 @@ export const types = [
 export const facilities = [
   {
     name: "Bath tub",
-    Icon: PiBathtubFill,
+    Icon: "PiBathtubFill",
   },
   {
     name: "Personal care products",
