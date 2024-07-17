@@ -171,113 +171,115 @@ export const types = [
   },
 ];
 
+let url = "https://home-rental-backend-knmc.onrender.com/uploads/";
 export const facilities = [
   {
     name: "Bath tub",
-    Icon: PiBathtubFill,
+    Icon: `${url}bathtub.png`,
   },
   {
     name: "Personal care products",
-    Icon: FaPumpSoap,
+    Icon: `${url}cream.png`,
   },
   {
     name: "Outdoor shower",
-    Icon: FaShower,
+    Icon: `${url}shower.png`,
   },
   {
     name: "Washer",
-    Icon: BiSolidWasher,
+    Icon: `${url}laundry-machine.png`,
   },
   {
     name: "Dryer",
-    Icon: BiSolidDryer,
+    Icon: `${url}hair-dryer.png`,
   },
   {
     name: "Hangers",
-    Icon: PiCoatHangerFill,
+    Icon: `${url}hanger.png`,
   },
   {
     name: "Iron",
-    Icon: TbIroning3,
+    Icon: `${url}iron.png`,
   },
   {
     name: "TV",
-    Icon: PiTelevisionFill,
+    Icon: `${url}television.png`,
   },
   {
     name: "Dedicated workspace",
-    Icon: BsPersonWorkspace,
+    Icon: `${url}workspace.png`,
   },
   {
     name: "Air Conditioning",
-    Icon: BsSnow,
+    Icon: `${url}airCond.png`,
   },
   {
     name: "Heating",
-    Icon: GiHeatHaze,
+    Icon: `${url}heat.png`,
   },
   {
     name: "Security cameras",
-    Icon: GiCctvCamera,
+    Icon: `${url}cctv.png`,
   },
   {
     name: "Fire extinguisher",
-    Icon: FaFireExtinguisher,
+    Icon: `${url}fireEx.png`,
   },
   {
     name: "First Aid",
-    Icon: BiSolidFirstAid,
+    Icon: `${url}firstAid.png`,
   },
   {
     name: "Wifi",
-    Icon: BiWifi,
+    Icon: `${url}wifi.png`,
   },
   {
     name: "Cooking set",
-    Icon: TbToolsKitchen,
+    Icon:  `${url}cooking.png`,
   },
   {
     name: "Refrigerator",
-    Icon: BiSolidFridge,
+    Icon: `${url}refri.png`,
   },
   {
     name: "Microwave",
-    Icon: MdMicrowave,
+    Icon: `${url}micro.png`,
   },
   {
     name: "Stove",
-    Icon: GiToaster,
+    Icon: `${url}stove.png`,
   },
   {
     name: "Barbecue grill",
-    Icon: GiBarbecue,
+    Icon: `${url}barbecue.png`,
   },
   {
     name: "Outdoor dining area",
-    Icon: FaUmbrellaBeach,
+    Icon: `${url}dining.png`,
   },
   {
     name: "Private patio or Balcony",
-    Icon: MdBalcony,
+    Icon: `${url}balcony.png`,
   },
   {
     name: "Camp fire",
-    Icon: GiCampfire,
+    Icon: `${url}camp.png`,
   },
   {
     name: "Garden",
-    Icon: MdYard,
+    Icon: `${url}garden.png`,
   },
   {
     name: "Free parking",
-    Icon: AiFillCar,
+    Icon: `${url}parking.png`,
   },
   {
     name: "Self check-in",
-    Icon: FaKey,
+    Icon: `${url}key.png`,
   },
   {
     name: " Pet allowed",
-    Icon: MdPets,
+    Icon: `${url}pet.png`,
   },
 ];
+
