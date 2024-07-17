@@ -133,7 +133,7 @@ const CreateList = (active) => {
     }
 
     axios
-      .post("https://home-rental-backend-knmc.onrender.com/upload", formData)
+      .post("http://localhost:8800/upload", formData)
       .then((res) => setImageURL(res.data.image_url))
       .catch((err) => console.log(err));
   };
@@ -145,7 +145,7 @@ const CreateList = (active) => {
   console.log(creator);
 
   //fetching data
-  const createListHandle = async(e) => {
+  const createListHandle = (e) => {
     e.preventDefault();
     console.log(imgFile);
 
@@ -153,8 +153,8 @@ const CreateList = (active) => {
     listingPhotoPaths = imageURL;
     console.log(listingPhotoPaths);
 
-  await  axios
-      .post("https://home-rental-backend-knmc.onrender.com/homeListing", {
+    axios
+      .post("http://localhost:8800/homeListing", {
         creator,
         category,
         type,
@@ -167,7 +167,7 @@ const CreateList = (active) => {
         bedCount,
         bedroomCount,
         bathroomCount,
-        amenities,
+       
         amenitiesIcon,
         listingPhotoPaths,
         title,
@@ -464,28 +464,32 @@ const CreateList = (active) => {
             className="flex flex-row  text-3xl gap-6  text-black justify-center   py-6 px-16 flex-wrap phones:gap-2 phones:p-0 phones:m-3 "
           >
             {facilities.map((faciliti, index) => {
-              const { Icon, name } = faciliti;
-
               return (
                 <div
                   style={{
                     color: amenities.includes(faciliti.name)
-                      ? "rgb(249, 115, 22)"
+                      ? "rgb(0, 0, 0)"
                       : "",
                     borderColor: amenities.includes(faciliti.name)
                       ? "rgb(249, 115, 22)"
                       : "",
+                    backgroundColor: amenities.includes(faciliti.name)
+                      ? "rgb(255, 204, 168)"
+                      : "",
                   }}
                   onClick={() => {
                     handleSelectAmenities(faciliti.name);
-                    amenitiesIcon.push(Icon.name);
-                    console.log(Icon);
+                    amenitiesIcon.push({
+                      name: faciliti.name,
+                      icon: faciliti.Icon,
+                    });
+                    console.log(faciliti.Icon);
                   }}
-                  className="flex flex-col border-gray-400 border-[1px] rounded-md w-40 h-20 justify-center hover:text-orange-500  hover:border-orange-500 items-center text-center phones:text-sm phones:w-16 phones:h-16"
+                  className="flex flex-col border-gray-400 border-[1px] rounded-md w-24 h-20 justify-center hover:text-orange-500  hover:border-orange-500 items-center text-center phones:text-sm phones:w-16 phones:h-16"
                 >
-                  <Icon />
-                  <span className="text-sm phones:text-[10px] phones:leading-3 ">
-                    {name}
+                  <img src={faciliti.Icon} className="h-10 w-9" />
+                  <span className="text-xs phones:text-[10px] phones:leading-3 ">
+                    {faciliti.name}
                   </span>
                 </div>
               );
@@ -633,7 +637,9 @@ const CreateList = (active) => {
       </div>
 
       <button
-        onClick={createListHandle}
+        onClick={
+          email != null ? createListHandle : toast.error("Please Login First ")
+        }
         className="bg-green-600 text-white text-xl font-semibold px-12 rounded-md py-4 ml-16 mt-8 mb-28 tracking-wider hover:bg-green-950 phones:text-base phones:ml-8"
       >
         Create your listing
