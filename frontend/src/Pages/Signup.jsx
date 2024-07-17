@@ -58,7 +58,7 @@ const Signup = () => {
         })
         .then((success) => {
           console.log(success);
-           toast.success("Login Successfully")
+           toast.success("Signup Successfully")
         
            setTimeout(() => {
          navigate("/login");
