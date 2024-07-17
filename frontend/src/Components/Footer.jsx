@@ -44,7 +44,7 @@ const Footer = () => {
 
         <img
           className="w-42 h-6 phones:w-24 phones:h-4"
-          src="images/creditCards.png"
+          src="https://home-rental-backend-knmc.onrender.com/uploads/creditCards.png"
           alt=""
         />
       </div>
