@@ -633,9 +633,7 @@ const CreateList = (active) => {
       </div>
 
       <button
-        onClick={
-          email != null ? createListHandle : toast.error("Please Login First ")
-        }
+        onClick={createListHandle}
         className="bg-green-600 text-white text-xl font-semibold px-12 rounded-md py-4 ml-16 mt-8 mb-28 tracking-wider hover:bg-green-950 phones:text-base phones:ml-8"
       >
         Create your listing
