@@ -161,7 +161,9 @@ const Properties = (active) => {
                   );
                   {
                     properti.price * countDays != 0
-                      ? toast.success("Successfully Booked") & window.location.reload()
+                      ? toast.success("Successfully Booked") & setTimeout(() => {
+                        window.location.reload()
+                      }, 3000) 
                       : "";
                   }
                 }}
