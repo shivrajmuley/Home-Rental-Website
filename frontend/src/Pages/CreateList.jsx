@@ -145,7 +145,7 @@ const CreateList = (active) => {
   console.log(creator);
 
   //fetching data
-  const createListHandle = (e) => {
+  const createListHandle = async(e) => {
     e.preventDefault();
     console.log(imgFile);
 
@@ -153,7 +153,7 @@ const CreateList = (active) => {
     listingPhotoPaths = imageURL;
     console.log(listingPhotoPaths);
 
-    axios
+  await  axios
       .post("https://home-rental-backend-knmc.onrender.com/homeListing", {
         creator,
         category,
