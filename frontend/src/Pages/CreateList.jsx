@@ -190,7 +190,7 @@ if(email != null){
     console.log(streetAddress);
   };
 else{
-   toast.error("Please login first  "));
+   toast.error("Please login first  ")
 }
 }
   return (
