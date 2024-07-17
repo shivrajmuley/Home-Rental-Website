@@ -20,7 +20,7 @@ const Footer = () => {
       <div className="flex items-center gap-3 ">
         <img
           className="h-14 phones:h-8"
-          src="https://home-rental-backend-knmc.onrender.com/uploads/profile_1720951341682.jpg"
+          src="images/logo.png"
         />
         <h1 className="font-bold text-xl phones:text-sm">Hub Havens</h1>
       </div>
