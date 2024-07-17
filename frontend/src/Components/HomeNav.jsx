@@ -67,7 +67,7 @@ const Nav = () => {
         className="flex shadow-xl sticky top-0 z-20 justify-between px-12 py-2  items-center bg-bg2 text-white phones:px-0 phones:text-xs phones:overscroll-x-auto "
       >
         <Link to="/" className="flex items-center gap-3 phones:px-0 ">
-          <img className="h-14 phones:h-8" src="images/logo.png" />
+          <img className="h-14 phones:h-8" src="https://home-rental-backend-knmc.onrender.com/uploads/logo.png" />
           <h1 className="font-bold text-xl phones:text-xs">Hub Havens</h1>
         </Link>
         <div
